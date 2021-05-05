@@ -10,56 +10,77 @@
 
     <body>
         <div class="wrap">
-            <h1>ただの覚え書きだよ。</h1>
-            <h2>後で体裁を整える予定。<br>
-                >>いつかやる。<<
-            </h2>
-            <ul>
-                <li>リセットcss
-                    <ul class="refelence_url">
-                        <li><a href="https://webdesign-trends.net/entry/8137" target="_blank" rel="external">2020年版！おすすめのリセットCSSまとめ | Web Design Trends</a></li>
-                    </ul>
-                </li>
-                <li>エメット(エディター機能のアレ)</li>
-                <li>ターミナルのコマンド色々</li>
-                <li>@importの使い方</li>
-                <li>紙のテクスチャ
-                    <ul class="refelence_url">
-                        <li><a href="https://photoshopvip.net/17536" target="_blank" rel="external">絶妙な質感のテクスチャを利用したウェブサイトデザイン50個まとめ - PhotoshopVIP</a></li>
-                        <li><a href="https://ferret-plus.com/1633" target="_blank" rel="external">背景デザインに使える無料パターン素材98選｜大きな画像にも使いやすい｜ferret</a></li>
-                    </ul>
-                </li>
-                <li>youtubeのお気に入り曲リストページ作成</li>
-                <li>font-familyの使い方</li>
-                <li>githubの使い方と理解。理解して無さすぎ。</li>
-                <li>a:hoverの盲点
-                    <dl class="event_detail">
-                        <dt>cssを書いていてa:hoverの内容が適用されなくなった。</dt>
-                        <dd>
-                            a:hoverで文字色を変更しようとしたところ、プロパティが効かなくなった。<br>
-                            リセットCSSの悪さかと考え、リセットCSSをの@import行をコメントアウトしたが変化なし。<br>
-                            <span class="attention cause">原因</span><br>
-                            cssの記述におけるルールとして、プロパティを適用する際に優先順位を決める為に「点数」が設けられている。<br>
-                            この点数が同点の場合の優先順位は<span class="attention">後述された方が優先される</span>ということ。<br>
-                            それを踏まえて、なぜa:hoverが機能しなかったのか。<br>
-                            a:visitedがa:hoverよりも後述されていた為にa:visitedのプロパティが優先して適用されてしまっていた。<br>
-                            <pre>
-                                .refelence_url li a:hover{
-                                    color:#fff;
-                                }
-                                .refelence_url li a:visited{
-                                    color:#aaa;
-                                }
-                            </pre>
-                            確認したところ、実際に上述と同じ書き方をしていた。<br>
-                            a:visitedを入れ替えてみたところ、期待した挙動になった。
-                        </dd>
+            <header>
+                <h1>ただの覚え書きだよ。</h1>
+                <h2>後で体裁を整える予定。<br>
+                    >>いつかやる<<
+                </h2>
+                <h4>文字色でvar()使ってるからIEで絶対開くなよ<br>対応してないからな</h4>
+            </header>
+            <main>
+                <ul>
+                    <li>リセットcss
                         <ul class="refelence_url">
-                            <li><a href="https://csshtml.work/hover-word-color/" target="_blank" rel="external">CSSでaタグのhoverが効かない･文字色が変わらない原因と修正方法</a></li>
+                            <li><a href="https://webdesign-trends.net/entry/8137" target="_blank" rel="external">2020年版！おすすめのリセットCSSまとめ | Web Design Trends</a></li>
                         </ul>
-                    </dl>
-                </li>
-            </ul>
+                    </li>
+                    <li>エメット(エディター機能のアレ)</li>
+                    <li>ターミナルのコマンド色々</li>
+                    <li>@importの使い方</li>
+                    <li>紙のテクスチャ
+                        <ul class="refelence_url">
+                            <li><a href="https://photoshopvip.net/17536" target="_blank" rel="external">絶妙な質感のテクスチャを利用したウェブサイトデザイン50個まとめ - PhotoshopVIP</a></li>
+                            <li><a href="https://ferret-plus.com/1633" target="_blank" rel="external">背景デザインに使える無料パターン素材98選｜大きな画像にも使いやすい｜ferret</a></li>
+                        </ul>
+                    </li>
+                    <li>youtubeのお気に入り曲リストページ作成</li>
+                    <li>font-familyの使い方</li>
+                    <li>githubの使い方と理解。理解して無さすぎ。</li>
+                    <li>a:hoverの盲点
+                        <dl class="event_detail">
+                            <dt>cssを書いていてa:hoverの内容が適用されなくなった。</dt>
+                            <dd>
+                                a:hoverで文字色を変更しようとしたところ、プロパティが効かなくなった。<br>
+                                リセットCSSの悪さかと考え、リセットCSSをの@import行をコメントアウトしたが変化なし。<br>
+                                <span class="attention cause">原因</span><br>
+                                cssの記述におけるルールとして、プロパティを適用する際に優先順位を決める為に「点数」が設けられている。<br>
+                                この点数が同点の場合の優先順位は<span class="attention">後述された方が優先される</span>ということ。<br>
+                                それを踏まえて、なぜa:hoverが機能しなかったのか。<br>
+                                a:visitedがa:hoverよりも後述されていた為にa:visitedのプロパティが優先して適用されてしまっていた。<br>
+                                <pre>
+                                    .refelence_url li a:hover{
+                                        color:#fff;
+                                    }
+                                    .refelence_url li a:visited{
+                                        color:#aaa;
+                                    }
+                                </pre>
+                                確認したところ、実際に上述と同じ書き方をしていた。<br>
+                                a:visitedを入れ替えてみたところ、期待した挙動になった。
+                            </dd>
+                            <ul class="refelence_url">
+                                <li><a href="https://csshtml.work/hover-word-color/" target="_blank" rel="external">CSSでaタグのhoverが効かない･文字色が変わらない原因と修正方法</a></li>
+                            </ul>
+                        </dl>
+                    </li>
+                    <li>
+                        Google Web Fontsの利用の仕方について
+                        <dl class="event_detail">
+                            <dt>完全に好みの問題なんだろうけど</dt>
+                            <dd>
+                                Webフォント代表(?)の<a href="https://fonts.google.com/" target="_blank" rel="external">Google Web Fonts</a>を利用する時、フォントごとに外部urlを参照するCSSファイルを作るか迷う。<br>
+                                というのも、CSSファイルで残しておけば「あの時使ったフォント使ってみるか」って時にいちいち探す手間省けるかも?<br>
+                                ファミリーごとダウンロードしてもいいんだけど、それはそれでクライアント端末に負荷かけるしどうだろう。<br>
+                                しばらくはフォントファミリーごとにCSSファイル作って、@importで呼び出してみるかぁ。
+                            </dd>
+                            <ul class="refelence_url">
+                                <li><a href="https://fastcoding.jp/blog/all/webdesign/web-fonts/" target="_blank" rel="external">【簡単】Webフォントの使い方！Google web fontsを使ってみよう</a></li>
+                                <li><a href="https://digitalidentity.co.jp/blog/creative/google-fonts.html" target="_blank" rel="external">Google Fontsとは？使い方や人気のフォントをご紹介！</a></li>
+                            </ul>
+                        </dl>
+                    </li>
+                </ul>
+            </main>
         </div>
 
 

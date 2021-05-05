@@ -2,16 +2,28 @@
 @import url("./css/normalize.css");
 @import url("./fonts/M_PLUS_Rounded_1c.css");
 @import url("./css/utility_for_penguin.css");
+@import url("./css/color_for_penguin.css");
 
 .wrap{
     box-sizing:border-box;
     width:1200px;
     min-height:100vw;
-    color:#dfdfdf;
+    /*color:#fcfaf2;*/
+    color:var(--color_sironeri);
     background:url("./img/background_img/08-Wallpaper.png") left top repeat;
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
+header{
+    width:auto;
+    margin:0 auto;
+    padding:2rem 0;
+    text-align:center;
+}
+header > h1{
+    margin:0;
+    padding:0;
+}
 
 .refelence_url > li{
     list-style-type:none;
@@ -21,22 +33,24 @@
     display:block;
     content:"参考URL";
     margin:1rem 0 0.3rem;
+    color:var(--color_siro-nezumi);
 }
 
 .refelence_url li a{
     display:inline-block;
     text-decoration:none;
-    border-bottom:1px dashed #afafaf;
+    border-bottom:1px dashed var(--color_gin-nezumi);
     padding-bottom:3px;
+    transition:0.7s;
 
     /*下線小細工*/
     position:relative;
 }
 .refelence_url li a:visited{
-    color:#aaa;
+    color:var(--color_gin-nezumi);
 }
 .refelence_url li a:hover{
-    color:#fff;
+    color:var(--color_sironeri);
 }
 .refelence_url li a::after{
     content:"";
@@ -44,10 +58,11 @@
     left:0;
     bottom:-1px;
     width:0;
-    border-bottom:1px solid #afafaf;
+    border-bottom:1px solid #111;
     transition:0.7s ease-out;
 }
 .refelence_url li a:hover::after{
+    border-bottom:1px solid var(--color_sironeri);
     width:100%;
 }
 
@@ -64,9 +79,39 @@ li+li{
     max-height:10rem;
     padding:1rem 2rem;
     margin-top:0;
-    border:1px solid #dfdfdf;
+    border:1px solid var(--color_sironeri);
     overflow:scroll;
 }
+.event_detail a{
+    display:inline-block;
+    padding-bottom:0;
+    text-decoration:none;
+    border-bottom:1px dashed var(--color_siro-nezumi);
+    color:var(--color_siro-nezumi);
+
+    position:relative;
+    transition:0.7s;
+}
+.event_detail a:visited{
+    color:var(--color_gin-nezumi);
+}
+.event_detail a:hover{
+    color:var(--color_sironeri);
+}
+.event_detail a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width:0;
+    border-bottom:1px solid #111;
+    transition:0.7s ease-out;
+}
+.event_detail a:hover::after{
+    border-bottom:1px solid var(--color_sironeri);
+    width:100%;
+}
+
 .event_detail > dt::before{
     display:inline;
     content:"「"
