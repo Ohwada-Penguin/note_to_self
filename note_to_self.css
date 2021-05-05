@@ -1,9 +1,60 @@
 @charset "utf-8";
+@import url("./css/normalize.css");
 @import url("./fonts/M_PLUS_Rounded_1c.css");
 
 .wrap{
     width:1200px;
+    min-height:100vw;
     color:#dfdfdf;
-    background:url("./background-image/08-Wallpaper.png") left top repeat;
+    background:url("./img/background_img/08-Wallpaper.png") left top repeat;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+.refelence_url > li{
+    list-style-type:circle;
+}
+
+.refelence_url li a{
+    display:inline-block;
+    text-decoration:none;
+    border-bottom:1px dashed #afafaf;
+    padding-bottom:3px;
+
+    /*下線小細工*/
+    position:relative;
+}
+.refelence_url li a:visited{
+    color:#aaa;
+}
+.refelence_url li a:hover{
+    color:#fff;
+}
+.refelence_url li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-1px;
+    width:0;
+    border-bottom:1px solid #afafaf;
+    transition:0.7s ease-out;
+}
+.refelence_url li a:hover::after{
+    width:100%;
+}
+
+li+li{
+    margin-top:2rem;
+}
+.refelence_url > li{
+    margin:5px 0;
+}
+
+.event_detail{
+    width:70%;
+    padding:1rem 2rem;
+    border:1px solid #dfdfdf;
+}
+.event_detail > li{
+    list-style-type:none;
 }
