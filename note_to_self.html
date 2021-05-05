@@ -79,6 +79,36 @@
                             </ul>
                         </dl>
                     </li>
+                    <li>
+                        background-imageのみの透過について
+                        <dl class="event_detail">
+                            <dt>そういえばbackground-imageのみの透過ってできるんか？</dt>
+                            <dd>
+                                指定した要素に対して不透明度を設定するプロパティがopacty:hoge;なんだけど、こいつでbackground-imageを不透明度の調整をしようとした。<br>
+                                結果としては不可能だった。そんな気はしていたけど。<br>
+                                そもそも「<span class="attention">指定した要素に対して不透明度を設定するプロパティ</span>」であって、プロパティを調整するプロパティではないもんね。仕方ないね。<br>
+                                でも、なんかできそうだから少しだけ調べたら、それっぽくできる方法あったわ。<br>
+                                やり方のイメージとしてはPhotoshopにおいてbackground-imageレイヤーの上層に白ベタのレイヤーを1枚乗せる。<br>
+                                そして、その乗せた白ベタレイヤーの不透明度を調整して、擬似的にbackground-imageが透過したように見せる。<br>
+                                <pre>
+                                hoge{
+                                    background-image:url("hogehogehoge.png");
+                                    background-color:rgba(255,255,255,0.6);
+                                    background-blend-mode:hard-light;
+                                }
+                                </pre>
+                                こんな感じ。<br>
+                                background-blend-modeのプロパティ値はなんか色々あるみたいだから、調べてみなさい。てかPhotoshopの描画モードとほぼ同義っぽいぞ。
+
+                            </dd>
+                            <ul class="refelence_url">
+                                <li><a href="https://www.sejuku.net/blog/55154" target="_blank" rel="external">CSSのopacityで要素をちょっと透明にする方法と活用法まとめ</a></li>
+                                <li><a href="https://dekiru.net/article/13168/" target="_blank" rel="external">opacityプロパティの意味と使い方</a></li>
+                                <li><a ref="https://note.com/jackinriver/n/n4383898ce0c6" target="_blank" rel="external">Background-image(背景画像)を透過させるCSS</a></li>
+                                <li><a href="https://design-trekker.jp/design/photoshop/drawing-mode/" target="_blank" rel="external">Photoshop 描画モードはこれで理解できる実用サンプル付き！</a></li>
+                            </ul>
+                        </dl>
+                    </li>
                 </ul>
             </main>
         </div>

@@ -4,10 +4,20 @@
 @import url("./css/utility_for_penguin.css");
 @import url("./css/color_for_penguin.css");
 
+body{
+    width:100vw;
+    background:url("./img/background_img/08-Wallpaper.png") left top repeat;
+    background-color:rgba(255,255,255,0.6);
+    background-blend-mode:hard-light;
+    /*background-imageに透過が効かない。まぁ要素じゃないしね。仕方ないね。*/
+    /*opacity:0.6;*/
+}
+
 .wrap{
     box-sizing:border-box;
     width:1200px;
     min-height:100vw;
+    margin:0 auto;
     /*color:#fcfaf2;*/
     color:var(--color_sironeri);
     background:url("./img/background_img/08-Wallpaper.png") left top repeat;
@@ -74,8 +84,8 @@ li+li{
 }
 
 .event_detail{
-    /*最低300px、最大60文字の幅で可能であれば35文字の幅を保つ…？*/
-    width:clamp(300px,35rem,60rem);
+    /*最低300px、最大60文字の幅で可能であれば50文字の幅を保つ…？*/
+    width:clamp(300px,50rem,60rem);
     max-height:10rem;
     padding:1rem 2rem;
     margin-top:0;
@@ -87,7 +97,7 @@ li+li{
     padding-bottom:0;
     text-decoration:none;
     border-bottom:1px dashed var(--color_siro-nezumi);
-    color:var(--color_siro-nezumi);
+    color:var(--color_gin-nezumi);
 
     position:relative;
     transition:0.7s;
