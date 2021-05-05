@@ -33,12 +33,31 @@
                 <li>font-familyの使い方</li>
                 <li>githubの使い方と理解。理解して無さすぎ。</li>
                 <li>a:hoverの盲点
-                    <ul class="event_detail">
-                        <li class="a">cssを書いていてa:hoverの内容が適用されなくなった。</li>
+                    <dl class="event_detail">
+                        <dt>cssを書いていてa:hoverの内容が適用されなくなった。</dt>
+                        <dd>
+                            a:hoverで文字色を変更しようとしたところ、プロパティが効かなくなった。<br>
+                            リセットCSSの悪さかと考え、リセットCSSをの@import行をコメントアウトしたが変化なし。<br>
+                            <span class="attention cause">原因</span><br>
+                            cssの記述におけるルールとして、プロパティを適用する際に優先順位を決める為に「点数」が設けられている。<br>
+                            この点数が同点の場合の優先順位は<span class="attention">後述された方が優先される</span>ということ。<br>
+                            それを踏まえて、なぜa:hoverが機能しなかったのか。<br>
+                            a:visitedがa:hoverよりも後述されていた為にa:visitedのプロパティが優先して適用されてしまっていた。<br>
+                            <pre>
+                                .refelence_url li a:hover{
+                                    color:#fff;
+                                }
+                                .refelence_url li a:visited{
+                                    color:#aaa;
+                                }
+                            </pre>
+                            確認したところ、実際に上述と同じ書き方をしていた。<br>
+                            a:visitedを入れ替えてみたところ、期待した挙動になった。
+                        </dd>
                         <ul class="refelence_url">
                             <li><a href="https://csshtml.work/hover-word-color/" target="_blank" rel="external">CSSでaタグのhoverが効かない･文字色が変わらない原因と修正方法</a></li>
                         </ul>
-                    </ul>
+                    </dl>
                 </li>
             </ul>
         </div>

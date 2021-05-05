@@ -1,8 +1,10 @@
 @charset "utf-8";
 @import url("./css/normalize.css");
 @import url("./fonts/M_PLUS_Rounded_1c.css");
+@import url("./css/utility_for_penguin.css");
 
 .wrap{
+    box-sizing:border-box;
     width:1200px;
     min-height:100vw;
     color:#dfdfdf;
@@ -12,7 +14,13 @@
 
 
 .refelence_url > li{
-    list-style-type:circle;
+    list-style-type:none;
+}
+
+.refelence_url > li:first-of-type::before{
+    display:block;
+    content:"参考URL";
+    margin:1rem 0 0.3rem;
 }
 
 .refelence_url li a{
@@ -51,10 +59,26 @@ li+li{
 }
 
 .event_detail{
-    width:70%;
+    /*最低300px、最大60文字の幅で可能であれば35文字の幅を保つ…？*/
+    width:clamp(300px,35rem,60rem);
+    max-height:10rem;
     padding:1rem 2rem;
+    margin-top:0;
     border:1px solid #dfdfdf;
+    overflow:scroll;
 }
-.event_detail > li{
-    list-style-type:none;
+.event_detail > dt::before{
+    display:inline;
+    content:"「"
+}
+.event_detail > dt::after{
+    display:inline;
+    content:"」"
+}
+.event_detail > dt+dd{
+    margin-top:0.5rem;
+}
+.event_detail > dd > span.cause{
+    display:inline-block;
+    margin-top:0.5rem;
 }
